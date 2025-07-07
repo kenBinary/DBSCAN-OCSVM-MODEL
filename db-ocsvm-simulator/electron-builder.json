@@ -1,0 +1,25 @@
+{
+  "appId": "com.bsb.db-ocsvm-simulator",
+  "files": ["./dist-electron", "./dist-react"],
+  "extraResources": [
+    "./dist-electron/preload.cjs",
+    "./src/assets/**",
+    {
+      "from": "dist-electron/model_executables/",
+      "to": "model_executables",
+      "filter": ["**/*"]
+    }
+  ],
+  "asarUnpack": ["**/*.exe"],
+  "icon": "./desktopIcon.png",
+  "mac": {
+    "target": "dmg"
+  },
+  "linux": {
+    "target": "AppImage",
+    "category": "Utility"
+  },
+  "win": {
+    "target": ["portable"]
+  }
+}

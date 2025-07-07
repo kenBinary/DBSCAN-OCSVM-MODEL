@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "types": ["./types"],
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/renderer/*"]
+    }
+  },
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
+}
