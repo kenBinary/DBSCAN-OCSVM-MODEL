@@ -1,31 +1,79 @@
 # db-ocsvm-simulator
 
-## Description
+## Overview
 
-simulator to evaluate the model's (ocsvm, db-ocsvm) performance.
+db-ocsvm-simulator is a desktop and web application for evaluating and visualizing the performance of machine learning models, specifically One-Class SVM (OCSVM) and DBSCAN-OCSVM, on network intrusion datasets. The simulator provides an interactive interface for running inference, visualizing results, and comparing models.
+
+## Features
+
+- Desktop app (Electron) and web app (React)
+- Visualize and compare OCSVM and DBSCAN-OCSVM results
+- Load and process datasets (e.g., CIDDS-001, NSL-KDD)
+- Run inference using pre-trained ONNX and joblib models
+- Modern UI with Tailwind CSS
+- Modular codebase for easy extension
+
+## Folder Structure
+
+```
+db-ocsvm-simulator/
+├── src/
+│   ├── main/           # Electron main process code
+│   ├── renderer/       # React renderer process code
+│   └── ...
+├── index.html          # Main HTML entry point
+├── package.json        # Project metadata and scripts
+├── electron-builder.json # Electron build config
+├── tailwind.config.js  # Tailwind CSS config
+├── vite.config.ts      # Vite build config
+└── ...
+```
 
 ## Setup
 
-clone repo
-`git clone git@github.com:kenBinary/db-ocsvm-simulator.git`
+1. **Clone the repository**
 
-install dependencies
-`npm install`
+   ```sh
+   git clone git@github.com:kenBinary/db-ocsvm-simulator.git
+   cd db-ocsvm-simulator
+   ```
+
+2. **Install dependencies**
+   ```sh
+   npm install
+   ```
 
 ## Usage
 
-To run the desktop app
+- **Run the desktop app (Electron + React):**
 
-`npm run dev`
+  ```sh
+  npm run dev
+  ```
 
-To run only the webpage
+- **Run only the web app (React):**
 
-`npm run dev:react`
+  ```sh
+  npm run dev:react
+  ```
 
-To build react
+- **Build the React app:**
 
-`npm run build:react`
+  ```sh
+  npm run build:react
+  ```
 
-To transpile electron code
+- **Transpile Electron code:**
+  ```sh
+  npm run transpile:electron
+  ```
 
-`transpile:electron`
+## Troubleshooting
+
+- Ensure Node.js and npm are installed (Node.js >= 16 recommended).
+- If you encounter dependency issues, try deleting `node_modules` and `package-lock.json`, then reinstall:
+  ```sh
+  rm -rf node_modules package-lock.json
+  npm install
+  ```
+- For Electron issues, ensure you are running the correct Node version and have all build tools installed.
